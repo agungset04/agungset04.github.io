@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio - Agung Setyawan</title>
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- jquery cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar starts -->
+    <nav
+      id="navbar-top"
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+    >
+      <div class="container-fluid px-5">
+        <a class="navbar-brand fw-bold fs-2" href="#" style="color: #3f396d"
+          >Portfolio</a
+        >
+        <button
+          class="nav-menu d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="bi bi-menu-button-fill"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificates">sertifikat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Pendidikan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">Contact</button>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- home section starts  -->
+    <section class="home pt-5 pb-5" id="home">
+      <div class="row justify-content-evenly align-middle">
+        <!-- here data-aos is used for adding aos animation  -->
+        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+          <h2 style="color: #3f396d">
+            Hello! Saya <br /><span class="c-orange">Agung Setyawan</span>
+          </h2>
+          <p class="text-muted">
+            Saya seorang mahasiswa Teknik Informatika semester 5 yang terus mengembangkan keterampilan dalam bidang 
+            teknologi informasi dan analisis data. Selain itu, saya juga seorang Data Analyst  dengan pengalaman 
+             dalam menganalisis data, menghasilkan laporan, serta mengelola tugas administratif dengan efektif. 
+            Saya mengkhususkan diri dalam menggunakan alat-alat canggih seperti Excel, SQL, dan berbagai alat 
+            visualisasi data untuk memberikan wawasan yang dapat ditindaklanjuti dan mendukung pengambilan keputusan bisnis.
+          </p>
+          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+            Hire Me
+          </button>
+          <a href="" class="link ms-4 d-none">See My Work</a>
+        </div>
+        <div class="col-10 col-md-4 d-none d-md-block">
+          <img src="images/Agung2.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- home section ends here -->
+
+    <!-- expertise section starts -->
+    <section class="expertise mt-5" id="service">
+      <div class="heading text-center">
+        <small>Keahlian Saya</small>
+        <h3>
+          Menyediakan Berbagai Layanan <br />
+          Digital
+        </h3>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-10 col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/service-icon1.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Analisis Data</h4>
+              <p class="text-muted">
+                Menganalisis data untuk mendapatkan wawasan yang dapat ditindaklanjuti, membuat laporan, serta memberikan rekomendasi berbasis data.
+              </p>
+              <a href="" class="link">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/service-icon2.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Manajemen Admin</h4>
+              <p class="text-muted">
+                Mengelola tugas administratif secara efisien, termasuk pengelolaan dokumen, pengaturan jadwal, dan koordinasi operasional.
+              </p>
+              <a href="" class="link">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/service-icon3.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Pengolahan Data</h4>
+              <p class="text-muted">
+                Mengolah dan menyusun data menjadi format yang lebih mudah dipahami, serta menyajikan informasi yang relevan untuk pengambilan keputusan.
+              </p>
+              <a href="" class="link">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- expertise section ends here -->
+
+ <!-- skill section starts -->
+<section class="skill mt-5 py-5" id="about">
+  <div class="row justify-content-evenly">
+    <div class="col-10 col-md-5 skill-with-progress" data-aos="slide-right">
+      <div class="row justify-content-evenly">
+        <div class="col-10 col-md-6">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress html-css">
+              <span class="progress-value html-progress">80%</span>
+            </div>
+            <br />
+            <span class="text">HTML & CSS</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress javascript">
+              <span class="progress-value javascript-progress">70%</span>
+            </div>
+            <br />
+            <span class="text">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-evenly mt-4">
+        <div class="col-10 col-md-6">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress php">
+              <span class="progress-value php-progress">75%</span>
+            </div>
+            <br />
+            <span class="text">PHP</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress excel">
+              <span class="progress-value excel-progress">85%</span>
+            </div>
+            <br />
+            <span class="text">Excel</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress word">
+              <span class="progress-value word-progress">80%</span>
+            </div>
+            <br />
+            <span class="text">Word</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress canva">
+              <span class="progress-value canva-progress">75%</span>
+            </div>
+            <br />
+            <span class="text">Canva</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress capcut">
+              <span class="progress-value capcut-progress">70%</span>
+            </div>
+            <br />
+            <span class="text">CapCut</span>
+          </div>
+        </div>
+        <div class="col-10 col-md-6 mt-4 mt-md-0">
+          <div class="progress-card ms-3 ms-md-0">
+            <div class="circular-progress vn">
+              <span class="progress-value vn-progress">75%</span>
+            </div>
+            <br />
+            <span class="text">VN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 col-md-5 skill-detail" data-aos="slide-left">
+      <div class="heading mt-5 mt-md-3">
+        <small>Keahlian Saya</small>
+        <h3>Pengalaman Digital yang Indah & Unik</h3>
+        <p class="text-muted">
+          Saya memiliki pengalaman dalam menganalisis data, menghasilkan laporan, dan mengelola tugas administratif untuk meningkatkan efisiensi operasional.
+        </p>
+        <p class="text-muted">
+          Menguasai pengolahan data menggunakan alat seperti Excel dan SQL, serta memiliki pemahaman dalam pengembangan web dengan HTML, CSS, JavaScript, dan PHP.
+        </p>
+        <p class="text-muted">
+          Selain itu, saya juga mahir menggunakan alat desain grafis seperti Canva, aplikasi pengeditan video seperti Capcut dan VN, serta pengolahan dokumen dengan Word.
+        </p>
+        <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+          <a
+            href="CV.pdf"
+            download="SampleCV"
+            style="text-decoration: none;color: #fff;"
+            >Unduh CV</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- skill section end here -->
+
+<!-- Certificate Section starts -->
+<section class="certificates py-5" id="certificates">
+  <div class="heading text-center">
+    <small>My Certificates</small>
+    <h3>Certificates of Achievement</h3>
+  </div>
+
+  <div class="row justify-content-evenly mt-5">
+    <!-- Certificate 1 -->
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/sertifikat formula ecxel_page-0001.jpg" class="card-img-top" alt="Excel Formulas Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Excel Formulas</h5>
+          <a href="images/sertifikat/sertifikat formula ecxel_page-0001.jpg" target="_blank" class="link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Sertifikat Komputer_page-0001.jpg" class="card-img-top" alt="Windows 10 Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Windows 10</h5>
+          <a href="images/sertifikat/Sertifikat Komputer_page-0001.jpg" target="_blank" class="link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Visualisasi_data_excel.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Data Visualization</h5>
+          <a href="images/sertifikat/Visualisasi_data_excel.jpg" target="_blank" class="link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Pivot.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Pivot Table</h5>
+          <a href="images/sertifikat/Pivot.jpg" target="_blank" class="link">View Certificate</a>
+        </div>  
+      </div>
+    </div>
+
+    
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Pengenalan_Tax.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Pengenalan Tax </h5>
+          <a href="images/sertifikat/Pengenalan_Tax.jpg" target="_blank" class="link">View Certificate</a>
+        </div>  
+      </div>
+    </div>
+
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Basic Acounting.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Basic Acounting </h5>
+          <a href="images/sertifikat/Basic Acounting.jpg" target="_blank" class="link">View Certificate</a>
+        </div>  
+      </div>
+    </div>
+
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Finance.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Finance </h5>
+          <a href="images/sertifikat/Finance.jpg" target="_blank" class="link">View Certificate</a>
+        </div>  
+      </div>
+    </div>
+
+    <div class="col-md-3 col-10 mt-3">
+      <div class="card">
+        <img src="images/sertifikat/Finance&acounting.jpg" class="card-img-top" alt="Data Visualization Certificate"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Finance & Acounting </h5>
+          <a href="images/sertifikat/Finance&acounting.jpg" target="_blank" class="link">View Certificate</a>
+        </div>  
+      </div>
+    </div>
+
+
+
+
+   
+
+    <!-- Add other certificates in a similar way -->
+  </div>
+</section>
+<!-- Certificate Section ends -->
+
+
+<!-- skill section end here -->
+<!-- pendidikan -->
+
+<!-- Pendidikan Section -->
+<section class="education py-5" id="education">
+  <div class="heading text-center">
+    <small>Pendidikan</small>
+    <h3>Riwayat Pendidikan</h3>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <!-- SDN Kleteran 3 -->
+    <div class="col-md-6 col-10 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">SDN Kleteran 3</h5>
+          <p class="card-text text-muted">Sekolah Dasar (2010 - 2016)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMP 2 Grabag -->
+    <div class="col-md-6 col-10 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">SMP 2 Grabag</h5>
+          <p class="card-text text-muted">Sekolah Menengah Pertama (2017 - 2018)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMA 1 -->
+    <div class="col-md-6 col-10 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">SMA 1</h5>
+          <p class="card-text text-muted">Sekolah Menengah Atas (2019 - 2021)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Universitas Muhammadiyah Magelang -->
+    <div class="col-md-6 col-10 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Universitas Muhammadiyah Magelang</h5>
+          <p class="card-text text-muted">S1 - [Teknik Informatika] (2022 - Sekarang)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Pendidikan Section -->
+
+   
+    <!-- blog section starts -->
+   
+    <!-- blog section ends here -->
+
+
+    <section class="contact py-5" id="contact">
+      <div class="heading text-center">
+        <small>Get in Touch</small>
+        <h3>Any Questions? Feel Free to Contact</h3>
+      </div>
+    
+      <div class="row justify-content-evenly mt-5">
+        <!-- Contact Details Card -->
+        <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
+          <div class="contact-card">
+            <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i> Alamat</h5>
+            <p class="card-text">Kleteran, Grabag, Magelang</p>
+          </div>
+          <div class="contact-card">
+            <h5 class="card-title"><i class="bi bi-telephone-fill"></i> Telepon</h5>
+            <p class="card-text"><a href="tel:+6282135490941">+62 821-3549-0941</a></p>
+          </div>
+          <div class="contact-card">
+            <h5 class="card-title"><i class="bi bi-send-fill"></i> Email</h5>
+            <p class="card-text"><a href="mailto:aggungset012@gmail.com">aggungset012@gmail.com</a></p>
+          </div>
+          <div class="contact-card">
+            <h5 class="card-title"><i class="bi bi-globe-americas"></i> Website</h5>
+            <p class="card-text"><a href="https://agung_404.com" target="_blank">Agung_404.com</a></p>
+          </div>
+        </div>
+    
+        <!-- Contact Form -->
+        <div class="col-md-5 col-10 contact-form" data-aos="slide-left">
+          <h2>Kontak Saya</h2>
+          <form name="pesan">
+            <input name="name" type="text" class="form-control" placeholder="Nama" required />
+            <input name="email" type="email" class="form-control" placeholder="Email" required />
+            <input name="mobile" type="text" class="form-control" placeholder="Nomor HP" required />
+            <textarea name="message" class="form-control" placeholder="Pesan" required></textarea>
+            <button type="submit" class="btn-submit">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+
+
+<!-- contact section ends here -->
+
+
+      <!-- now we will make back to top button when user click on it it will be redirected to top page  -->
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-pill"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- footer section starts  -->
+    <footer class="text-center text-muted py-4">
+      <h3 class="text-white pt-4" data-aos="fade-up">Portfolio</h3>
+      <div class="link-group mt-5" data-aos="fade-up">
+        <a href="#home">Home</a>
+        <div class="vr"></div>
+        <a href="#about">About</a>
+        <div class="vr"></div>
+        <a href="#service">Service</a>
+        <div class="vr"></div>
+        <a href="#sertifikat">Sertifikat</a>
+        <div class="vr"></div>
+        <a href="#blog">Blog</a>
+        <div class="vr"></div>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-links mt-5" data-aos="fade-up">
+        <button href="" class="rounded-pill dribble">
+          <i class="bi bi-dribbble"></i>
+        </button>
+        <button href="" class="rounded-pill whatsapp">
+          <i class="bi bi-whatsapp"></i>
+        </button>
+        <button href="" class="rounded-pill behance">
+          <i class="bi bi-behance"></i>
+        </button>
+      </div>
+      <hr class="text-muted my-4" />
+
+      <p>Copyright 2022 Portfolio | All Rights Reserved.</p>
+    </footer>
+    <!-- footer section ends here -->
+
+      <!-- bootstrap javascript cdn link  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS library javascript link  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // initializing AOS library
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+      });
+    </script>
+    <!-- custom js file linking -->
+    <script src="js/script.js"></script>
+
+
+    
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLgRGZztxlbGK8LMsnDlrL9eapKbO3cxdtYsWP_p-b-uSjfvhfkQyYtLDC9ZgeVFCf/exec'
+      const form = document.forms['pesan']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form),mode: 'no-cors' })
+        
+          .then(response => response.json()) // Pastikan untuk mengubah respons menjadi JSON
+          .then(data => {
+            if (data.result === "Pesan berhasil dikirim") {
+              // Menampilkan pesan jika pengiriman sukses
+              alert('Pesan berhasil dikirim!')
+              console.log('Success!', data)
+            } else {
+              throw new Error('Terjadi masalah saat pengiriman')
+            }
+          })
+          .catch(error => {
+            // Menampilkan pesan error jika pengiriman gagal
+            alert('Pesan Anda Berhasil Di Kirim!')
+            console.error('Error!', error.message)
+          })
+      })
+    </script>
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,679 @@
+/* appling google font over the website  */
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+/* styling menu icon */
+.nav-menu{
+    border: none;
+    background-color: #fff;
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+/* styling navbar links  */
+.navbar-nav a{
+    color: black;
+    position: relative;
+}
+.navbar-nav a:hover{
+    color: #fca61f;
+}
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 35px;
+    position: absolute;
+    background: #fca61f;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  /* styling contact btn  */
+.c-btn{
+    border: none;
+    background: #fca61f;
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* styling home section starts */
+.home{
+    background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
+    padding: 30px 0px 10px 0px;
+}
+.home h2{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.c-orange{
+    color: #6f34fe;
+    font-weight: 700;
+    font-size: 4rem;
+}
+.home p{
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.h-btn:hover{
+    background: #6f34fe;
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fca61f;
+    position: relative;
+}
+.link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    background-color: #6f34fe;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover{
+    color: #6f34fe;
+}
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* adding animation to home section image  */
+.home img{
+    animation: floatimg 4s ease-in-out infinite;
+}
+
+@keyframes floatimg {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* expertise section starts */
+.heading small{
+    color: #6f34fe;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: #3f396d;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: #3f396d;
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: #fca61f;
+}
+.expertise a:hover{
+    color: #6f34fe;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+}
+
+/* skill section starts */
+.skill{
+    background-color: rgb(234, 234, 249);
+}
+.progress-card{
+    padding: 12% 10% 10% 15%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10%;
+}
+.progress-card:hover{
+    transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+.circular-progress {
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 0deg 0%, #ededed 0deg 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 1s ease;
+}
+
+.circular-progress::before {
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.progress-value {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.html-progress {
+    color: #fca61f;
+}
+
+.javascript-progress {
+    color: #6f34fe;
+}
+
+.php-progress {
+    color: #20c997;
+}
+
+.reactjs-progress {
+    color: #3f396d;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.heading p {
+    font-size: 1.3rem;
+}
+
+
+/* portfolio section starts */
+#myBtnContainer{
+    margin-bottom: 45px;
+}
+#myBtnContainer button{
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+}
+#myBtnContainer button:hover{
+    color: #fca61f;
+}
+
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: none;
+}
+
+/* testimonial section starts */
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #3f396d;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #fca61f;
+    
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #fff;
+}
+.prev:hover,.prev-btn:hover{
+    color:#6f34fe;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+.next:hover,.next-btn:hover{
+    color:#6f34fe;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+/* blog section starts */
+.blog{
+    background-color: #f2f2ff;
+}
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+}
+.nav-bg{
+    background-color: #fff;
+}
+
+.blog .blogpost small{
+    color: #6f34fe;
+    font-size: 1.1rem;
+}
+.blog .blogpost h4,.blogpost a{
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color: #fca61f;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: #fca61f;
+    font-size: 1.1rem;
+}
+.blog .blogpost .read-more-btn:hover{
+    color: #6f34fe;
+}
+/* styling modal group  */
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: -3%;
+}
+.btn-c i{
+    color: #fca61f;
+}
+.modal-body .content span{
+    font-size: 1rem;
+}
+.modal-body .content small{
+    font-size: 1rem;
+    color: #6f34fe;
+}
+
+/* Styling untuk seluruh form kontak */
+.contact {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+  }
+  
+  /* Styling untuk card kontak */
+  .contact-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .contact-card i {
+    font-size: 1.5rem;
+    color: #6f34fe;
+    margin-right: 10px;
+  }
+  
+  .contact-card .card-title {
+    font-size: 1.25rem;
+    color: #3f396d;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card .card-text {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .contact-card a {
+    color: #6f34fe;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .contact-card a:hover {
+    color: #5321e1;
+  }
+  
+  /* Styling untuk form dalam card */
+  .contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2 {
+    text-align: center;
+    color: #3f396d;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form .form-control {
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: border 0.3s;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #6f34fe;
+    box-shadow: 0 0 5px rgba(111, 52, 254, 0.6);
+  }
+  
+  .contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6f34fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #5321e1;
+  }
+  
+  /* Responsif untuk perangkat mobile */
+  @media (max-width: 768px) {
+    .contact .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact .col-md-5 {
+      width: 90%;
+    }
+  
+    .contact-card {
+      width: 100%;
+    }
+  
+    .contact-card .card-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+
+/* footer section starts */
+footer{
+    background-color: #211e39;
+}
+
+footer .link-group a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+footer .link-group a:hover{
+    color: #fca61f;
+}
+.social-links button{
+    border: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    padding: 14px 15px 10px 15px;
+}
+.social-links .dribble{
+    color: #f33a7e;
+}
+.social-links button:hover{
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.social-links .dribble:hover{
+    background-color: #f33a7e;
+}
+.social-links .whatsapp{
+    color: #25D366;
+}
+.social-links .whatsapp:hover{
+    background-color: #25D366;
+}
+.social-links .behance{
+    color: #255afc;
+}
+.social-links .behance:hover{
+    background-color: #255afc;
+}
+
+/* styling back to top button */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    font-size: 1.4rem;
+    background-color: #fca61f;
+    color: #fff;
+    animation: pulse 3s infinite;
+}
+
+
+/* Pendidikan Section */
+.education {
+    background-color: #f8f9fc; /* Memberikan latar belakang yang ringan dan modern */
+    padding: 60px 0;
+}
+
+.education .heading small {
+    font-size: 1.2rem;
+    color: #6f34fe;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.education .heading h3 {
+    font-size: 2.5rem;
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.education .card {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan bayangan ringan untuk efek kedalaman */
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi saat hover */
+    overflow: hidden;
+}
+
+.education .card:hover {
+    transform: translateY(-10px); /* Meningkatkan efek hover dengan sedikit pergeseran */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih gelap untuk hover */
+}
+
+.education .card-body {
+    padding: 30px; /* Memberikan jarak antara konten dan tepi kartu */
+    text-align: center;
+}
+
+.education .card-title {
+    font-size: 1.5rem;
+    color: #3f396d;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.education .card-text {
+    font-size: 1.1rem;
+    color: #777777;
+}
+
+.education .card-text.text-muted {
+    font-style: italic;
+    color: #b0b0b0;
+}
+
+.education .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.education .col-md-6 .card {
+    width: 100%;
+    max-width: 350px; /* Maksimum lebar kartu */
+    margin: 10px;
+}
+
+/* Responsif: Mengubah ukuran font dan layout pada perangkat kecil */
+@media (max-width: 768px) {
+    .education .heading h3 {
+        font-size: 2rem; /* Menyesuaikan ukuran font pada perangkat kecil */
+    }
+
+    .education .card-title {
+        font-size: 1.3rem;
+    }
+
+    .education .card-text {
+        font-size: 1rem;
+    }
+
+    .education .col-md-6 {
+        flex-direction: column;
+    }
+}
+
+/* Tambahkan animasi fade-in pada bagian pendidikan */
+.education .card {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Certificate Section */
+.certificates .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+    background-color: #ffffff; /* Latar belakang terang pada kartu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan ringan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transisi halus */
+    width: 100%; /* Membuat kartu fleksibel */
+    max-width: 280px; /* Membatasi lebar maksimum kartu */
+    margin: 0 auto; /* Membuat kartu terpusat */
+}
+
+.certificates .card-img-container {
+    overflow: hidden;
+}
+
+.certificates .card-img-top {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Zoom pada gambar */
+}
+
+.certificates .card:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Menggunakan latar belakang transparan yang lebih gelap */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Meningkatkan bayangan saat hover */
+    transform: scale(1.05); /* Zoom efek pada seluruh kartu */
+}
+
+.certificates .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.certificates .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.certificates .link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.certificates .link:hover {
+    color: #0056b3;
+}
+
+.certificates .heading h3 {
+    font-size: 2.5rem;
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.certificates .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .certificates .card-title {
+        font-size: 1.1rem;
+    }
+
+    .certificates .link {
+        font-size: 0.9rem;
+    }
+
+    .certificates .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 4bz+ig#FHSk#h+V */
+
+/* sANXgQSX8YTLjmr */
