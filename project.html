@@ -156,6 +156,24 @@
               </div>
             </div>
           </div>
+
+
+          <div class="col-md-4 col-10 mb-4">
+            <div class="card project-card h-100">
+              <img src="images/projek/bimbel.png" class="card-img-top" alt="Project 5" />
+              <div class="card-body">
+                <h5 class="card-title">Sistem Informasi Bimbel</h5>
+                <p class="card-text">
+                  Sistem Informasi ini berfungsi untuk mempermudah calon siswa , dan admin untuk melakukan pendaftaran dan penjadwalan pada sebuah tempat bimbingan belajar 
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+
+
+
           <!-- Project 6 -->
           <div class="col-md-4 col-10 mb-4">
             <div class="card project-card h-100">
@@ -176,4 +194,56 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
+
+
+  <style>
+    /* Tambahkan background gradasi untuk seluruh halaman */
+    body {
+      background: linear-gradient(135deg, #5b5165, #285db9); /* Gradasi ungu ke biru */
+      background-size: 400% 400%; /* Untuk membuat animasi lebih halus */
+      animation: gradientBG 15s ease infinite;
+      color: #fff; /* Atur teks menjadi putih agar kontras */
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  
+    /* Animasi untuk gradasi */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  
+    /* Tambahkan efek blur untuk container proyek */
+    .projects .card {
+      background: rgba(255, 255, 255, 0.2); /* Warna putih transparan */
+      backdrop-filter: blur(10px); /* Efek blur */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tipis */
+      border-radius: 10px;
+      color: #000; /* Teks tetap hitam untuk kontras */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+  
+    /* Hover pada kartu proyek */
+    .projects .card:hover {
+      transform: scale(1.05); /* Membesarkan saat hover */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+    }
+  
+    /* Tombol */
+    .btn-primary {
+      background-color: #ff7f50; /* Coral */
+      border: none;
+    }
+  
+    .btn-primary:hover {
+      background-color: #ff6347; /* Tomato */
+    }
+  </style>
+  
 </html>
